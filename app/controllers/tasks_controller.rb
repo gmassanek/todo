@@ -14,4 +14,12 @@ class TasksController < ApplicationController
     task.destroy
     render :nothing => true
   end
+  
+  def update
+    task = Task.find params[:id]
+    task.update_attribute(:complete, params[:complete])
+    render :json => task
+  end
+  
+  
 end

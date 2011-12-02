@@ -3,7 +3,7 @@ namespace('Todo.views', {
     tagName: 'div',
     className: 'task-list',
     events: {
-      'keyup #new-task' : 'createOnEnter',
+      'keyup #new-task' : 'createOnEnter'
     },
 
     initialize : function () {
@@ -19,6 +19,7 @@ namespace('Todo.views', {
 
     addTask: function (task) {
       var view = new Todo.views.TaskView({ model: task});
+
       var taskEl = view.render().el;
       $('.tasks').prepend(taskEl);
     },
@@ -38,6 +39,5 @@ namespace('Todo.views', {
     clearInput : function () {
       $('#new-task').attr("value", '');
     }
-
   })
 });
